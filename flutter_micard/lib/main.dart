@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,43 +12,31 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                width: 100.0,
-                color: Colors.red,
-                child: Text('Container 1'),
+            child: Column(
+          children: [
+            CircleAvatar(
+              radius: 50,
+              backgroundColor: Colors.red,
+              foregroundImage: AssetImage('images/fizzgig.jpg'),
+            ),
+            Text(
+              'R. Clifford',
+              style: GoogleFonts.pacifico(
+                textStyle: TextStyle(color: Colors.white, fontSize: 40),
               ),
-              Container(
-                width: 100.0,
-                color: Colors.teal,
-                child: Center(
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 100.0,
-                          width: 100.0,
-                          color: Colors.yellow,
-                        ),
-                        Container(
-                          height: 100.0,
-                          width: 100.0,
-                          color: Colors.green,
-                        ),
-                      ]),
-                ),
+            ),
+            Text(
+              'FLUTTER DEVELOPER',
+              style: GoogleFonts.sourceSansPro(
+                textStyle: TextStyle(
+                    color: Colors.teal.shade100,
+                    fontSize: 20,
+                    letterSpacing: 2.5,
+                    fontWeight: FontWeight.bold),
               ),
-              Container(
-                width: 100.0,
-                color: Colors.blue,
-                child: Text('Container 3'),
-              ),
-            ],
-          ),
-        ),
+            ),
+          ],
+        )),
       ),
     );
   }
