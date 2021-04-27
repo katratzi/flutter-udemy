@@ -2,12 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const kTextStyle = TextStyle(fontSize: 18);
+import 'constants.dart';
 
 class IconContent extends StatelessWidget {
   final String text;
   final IconData faIcon;
-  const IconContent({this.faIcon, this.text});
+
+  IconContent({this.faIcon, this.text});
+
+  final TextStyle kLabelTextStyle = TextStyle(fontSize: 18);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class IconContent extends StatelessWidget {
         ),
         Text(
           text,
-          style: kTextStyle,
+          style: kLabelTextStyle,
         )
       ],
     );
