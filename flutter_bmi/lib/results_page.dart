@@ -6,6 +6,15 @@ import 'package:flutter_bmi/reusable_card.dart';
 import 'bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
+  final String bmiResult;
+  final String resultText;
+  final String interpretaion;
+
+  ResultsPage(
+      {@required this.bmiResult,
+      @required this.resultText,
+      @required this.interpretaion});
+
   @override
   Widget build(BuildContext context) {
     final kTitleTextStyle = TextStyle(
@@ -43,18 +52,21 @@ class ResultsPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        'Normal',
+                        resultText,
                         style: TextStyle(color: Colors.white),
                       ),
                       Text(
-                        '18.3',
+                        bmiResult,
                         style: TextStyle(
                             fontSize: 100,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
-                      Text(
-                        'Your bmi is low, eat more',
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          interpretaion,
+                        ),
                       )
                     ],
                   ),
