@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/material.dart';
 import 'package:flutter_bmi/reusable_card.dart';
+import 'package:flutter_bmi/round_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'constants.dart';
@@ -25,6 +26,8 @@ class _InputPageState extends State<InputPage> {
 
   Gender gender;
   int height = 180;
+  int weight = 60;
+  int age = 22;
 
   @override
   Widget build(BuildContext context) {
@@ -129,11 +132,85 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Weight',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: kNumberStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                              icon: FontAwesomeIcons.minus,
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                              icon: FontAwesomeIcons.plus,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     color: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Age',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                              icon: FontAwesomeIcons.minus,
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                              icon: FontAwesomeIcons.plus,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
