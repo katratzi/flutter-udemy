@@ -7,6 +7,7 @@ import 'package:flutter_bmi/reusable_card.dart';
 import 'package:flutter_bmi/round_icon_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'bottom_button.dart';
 import 'constants.dart';
 import 'icon_content.dart';
 
@@ -216,10 +217,12 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            height: kBottomContainerHeight,
-            color: kBottomContainerColor,
-          )
+          BottomButton(
+            label: 'Calculate',
+            onPressed: () {
+              Navigator.pushNamed(context, '/results');
+            },
+          ),
         ],
       ),
     );
